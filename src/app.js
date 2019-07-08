@@ -14,6 +14,13 @@ console.log('App.js is running');
 /* var userName = 'Mike';
 var userAge = 27;
 var userLocation = 'Vegas'; */
+function getLocation(location){
+    if(location){
+        return location;
+    } else {
+        return 'Unknown';
+    }
+}
 
 var user = {
     name:   'Andrew',
@@ -37,11 +44,11 @@ var templateTwo = (
     <div>
         <h1>{user.name}</h1>
         <p>Age: {user.age}</p>
-        <p>Location: {user.location}</p>
+        <p>Location: {getLocation(user.location)}</p>
     </div>
 );
 var appRoot = document.getElementById('app');
 
 // ReactDOM.render(template, appRoot);
 ReactDOM.render(templateTwo, appRoot);
-ReactDOM.render(templateThree, appRoot);
+//ReactDOM.render(templateThree, appRoot);

@@ -16,6 +16,13 @@ console.log('App.js is running');
 /* var userName = 'Mike';
 var userAge = 27;
 var userLocation = 'Vegas'; */
+function getLocation(location) {
+    if (location) {
+        return location;
+    } else {
+        return 'Unknown';
+    }
+}
 
 var user = {
     name: 'Andrew',
@@ -61,11 +68,11 @@ var templateTwo = React.createElement(
         'p',
         null,
         'Location: ',
-        user.location
+        getLocation(user.location)
     )
 );
 var appRoot = document.getElementById('app');
 
 // ReactDOM.render(template, appRoot);
 ReactDOM.render(templateTwo, appRoot);
-ReactDOM.render(templateThree, appRoot);
+//ReactDOM.render(templateThree, appRoot);
