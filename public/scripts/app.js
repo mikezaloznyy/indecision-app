@@ -2,77 +2,32 @@
 
 console.log('App.js is running');
 
-/* var template = (
-    <div>
-        <h1>Mike</h1>
-        <p>Paragraph</p>
-        <ol>
-            <li>Item one</li>
-            <li>Item two</li>
-        </ol>
-    </div>
-); */
-
-/* var userName = 'Mike';
-var userAge = 27;
-var userLocation = 'Vegas'; */
-function getLocation(location) {
-    if (location) {
-        return location;
-    } else {
-        return 'Unknown';
-    }
-}
-
-var user = {
-    name: 'Andrew',
-    age: 26,
-    location: 'Philadelphia'
+var app = {
+    title: 'Indecision App',
+    subtitle: 'Put your life in the hands of a computer',
+    options: ['One', 'Two']
 };
 
-var book = {
-    title: 'TITLE',
-    subtitle: 'SUB-TITLE'
-};
-
-var templateThree = React.createElement(
+var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        book.title
+        app.title
+    ),
+    app.subtitle && React.createElement(
+        'p',
+        null,
+        app.subtitle
     ),
     React.createElement(
         'p',
         null,
-        book.subtitle
+        app.options.length > 0 ? 'Here are your options' : 'No options'
     )
 );
 
-var templateTwo = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        user.name
-    ),
-    React.createElement(
-        'p',
-        null,
-        'Age: ',
-        user.age
-    ),
-    React.createElement(
-        'p',
-        null,
-        'Location: ',
-        getLocation(user.location)
-    )
-);
 var appRoot = document.getElementById('app');
 
-// ReactDOM.render(template, appRoot);
-ReactDOM.render(templateTwo, appRoot);
-//ReactDOM.render(templateThree, appRoot);
+ReactDOM.render(template, appRoot);
